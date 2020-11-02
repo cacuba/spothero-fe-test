@@ -41,6 +41,8 @@
 @import "common/layout";
 @import "common/typography";
 @import "common/Button";
+@import "common/Modal";
+@import "common/Loader";
 @import "common/TextButton";
 
 /* ----------------------------------------------------------------------------- *\
@@ -48,6 +50,7 @@
 \* ----------------------------------------------------------------------------- */
 
 @import "spot/SpotItem";
+@import "spot/SpotDetails";
 @import "search/Search";
 @import "checkout/Checkout";
 @import "confirmation/Confirmation";

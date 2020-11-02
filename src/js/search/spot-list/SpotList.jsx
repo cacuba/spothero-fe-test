@@ -10,10 +10,6 @@ export default class SpotList extends PureComponent {
         setSpot: PropTypes.func.isRequired
     };
 
-    _onDetailsClick = spot => {
-        this.props.setSpot(spot);
-    }
-
     render() {
         const {
             selectedSpot,
@@ -36,12 +32,10 @@ export default class SpotList extends PureComponent {
                                 key={spot.id}
                                 data={spot}
                                 isSelected={selectedSpot && selectedSpot.id === spot.id}
-                                onDetailsClick={this._onDetailsClick}
                             />
                         );
                     })}
                 </div>
-
             </div>
         );
     }

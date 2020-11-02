@@ -11,25 +11,27 @@ import Confirmation from './confirmation/Confirmation';
 import Search from './search/Search';
 import '../sass/main.scss';
 
+
+const findSpotById = (spots, id) => spots.find(spot => spot.id === id)
 const App = ({
     spots
 }) => {
     return (
         <Switch>
             <Route
-                exact
-                path="/"
-                render={() => {
-                    return <Search spots={spots} />;
-                }}
-            />
-            <Route
-                path="/checkout"
-                component={Checkout}
-            />
-            <Route
                 path="/confirmation"
                 component={Confirmation}
+            />
+            <Route
+                exact
+                path="/:id?"
+                render={() => <Search spots={spots} />}
+            />
+            <Route
+                path="/:id/checkout"
+                render={({match: {params: {id}}}) => {
+                    return <Checkout spot={findSpotById(spots, +id)} />;
+                }}
             />
         </Switch>
     );

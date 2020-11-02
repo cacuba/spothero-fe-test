@@ -1,0 +1,65 @@
+.Modal-container {
+    z-index: $z-index-back;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $color-fuel;
+    transition: opacity $animation;
+    display: flex;
+
+    .Modal-body {
+        transition: opacity $animation, transform $animation;
+        z-index: $z-index-fore;
+        position: relative;
+        background: #ffffff;
+        padding: 24px 48px;
+        border-radius: 4px;
+        align-self: center;
+        max-width: 550px;
+        margin: 0 auto;
+    }
+
+    .Modal-close {
+        position: absolute;
+        font-size: 24px;
+        right: 16px;
+        top: 8px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .Modal-title {
+        @include font-size(2.4);
+        text-align: center;
+        font-weight: $font-weight-semi-bold;
+        margin-top: 8px;
+        margin-bottom: 16px;
+    }
+}
+
+.modal-enter {
+    opacity: 0;
+    .Modal-body {
+        transform: scale(1.1);
+    }
+}
+
+.modal-enter-active {
+    opacity: 1;
+    .Modal-body {
+        transform: scale(1);
+    }
+}
+
+.modal-exit {
+    opacity: 1;
+}
+
+.modal-exit-active {
+    opacity: 0;
+    .Modal-body {
+        transform: scale(1.1);
+    }
+}

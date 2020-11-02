@@ -1,0 +1,14 @@
+.SpotDetails {
+    .title {
+        @include font-size(2);
+        font-weight: $font-weight-semi-bold;
+    }
+
+    .description {
+        padding: 18px 0;
+    }
+
+    .cta {
+        text-align: center;
+    }
+}

@@ -1,7 +1,10 @@
 .SpotItem {
     display: flex;
-    padding: 20px 25px;
     border-bottom: 1px solid darken($color-pavement, 5%);
+
+    &.SpotItem-padded {
+        padding: 20px 25px;
+    }
 
     .Image {
         flex-shrink: 0;

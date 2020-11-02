@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Image from '../common/Image';
 import TextButton from '../common/TextButton';
+import { Link } from 'react-router-dom';
 
 export default class SpotItem extends PureComponent {
     static propTypes = {
@@ -12,13 +13,14 @@ export default class SpotItem extends PureComponent {
         onDetailsClick: PropTypes.func
     };
     static defaultProps = {
-        showDetails: true
+        showDetails: true,
+        padded: true
     };
 
     _onDetailsClick = evt => {
         const {
             data,
-            onDetailsClick
+            onDetailsClick,
         } = this.props;
 
         onDetailsClick(data);
@@ -28,7 +30,9 @@ export default class SpotItem extends PureComponent {
         const {
             showDetails,
             isSelected,
+            padded,
             data: {
+                id,
                 image,
                 distance,
                 title
@@ -36,7 +40,8 @@ export default class SpotItem extends PureComponent {
         } = this.props;
         const classes = classNames(
             'SpotItem',
-            {'SpotItem-selected': isSelected}
+            {'SpotItem-selected': isSelected},
+            {'SpotItem-padded': padded}
         );
 
         return (
@@ -45,7 +50,11 @@ export default class SpotItem extends PureComponent {
                 <div className="SpotItem-info">
                     <h2>{title}</h2>
                     <p>{distance}</p>
-                    {showDetails && <TextButton onClick={this._onDetailsClick}>Details</TextButton>}
+                    {showDetails &&
+                        <Link to={`/${id}`}>
+                            <TextButton>Details</TextButton>
+                        </Link>
+                    }
                 </div>
             </div>
         );

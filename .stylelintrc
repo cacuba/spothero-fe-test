@@ -1,4 +1,4 @@
 {
     "extends": "@spothero/stylelint-config",
-     "ignoreFiles": ["src/sass/utils/vendor/**/*.scss"]
+    "ignoreFiles": ["src/sass/utils/vendor/**/*.scss"],
 }
