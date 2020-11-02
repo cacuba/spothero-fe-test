@@ -17,15 +17,6 @@ export default class SpotItem extends PureComponent {
         padded: true
     };
 
-    _onDetailsClick = evt => {
-        const {
-            data,
-            onDetailsClick,
-        } = this.props;
-
-        onDetailsClick(data);
-    }
-
     render() {
         const {
             showDetails,

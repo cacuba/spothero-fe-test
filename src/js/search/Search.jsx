@@ -20,10 +20,12 @@ const Search = ({
             setSpot(spots.find(spot => spot.id === +id))
         }
     }, [id, setSpot, spots]);
+
     const _onModalClose = () => {
         setSpot(null);
         pushTo('/');
     };
+
     return (
         <div className="Search">
             <SpotList

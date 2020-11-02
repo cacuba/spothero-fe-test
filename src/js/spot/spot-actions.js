@@ -7,10 +7,3 @@ export const updateSelected = spot => {
         payload: spot
     };
 };
-
-export const purchase = data => {
-    return {
-        type: SPOT_PURCHASE,
-        payload: data
-    };
-};
